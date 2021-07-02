@@ -1,0 +1,25 @@
+
+fn ourNewFunction<x> -> 
+	println("Cool function says: " + str(x));
+
+fn addTwo<x> -> x + 2;
+
+fn coolAlgorithm<x, y> {
+	println("X: " + str(x));
+	println("Y: " + str(y));
+	if (x == 2 | y == 2) { return; }
+	return x + y;
+}
+
+ourNewFunction(5);
+println(addTwo(162));
+
+println(
+	for (i -> 0:5) => for (j -> 0:5) => 
+		coolAlgorithm(i, j)
+);
+
+
+
+
+

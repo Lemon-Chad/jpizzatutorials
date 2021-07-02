@@ -1,0 +1,19 @@
+
+recipe Number {
+	value;
+	ingredients <x> {
+		attr value => x;
+	}
+	method bin string -> str(this::value)
+	method bin add<other> {
+		if (type(other) == "num") {
+			return Number(other + this::value);
+		} return Number(other::value + this::value);
+	}
+};
+
+var num => Number(5);
+var num2 => Number(6);
+println(num + 8);
+
+

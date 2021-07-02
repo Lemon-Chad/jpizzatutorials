@@ -1,0 +1,36 @@
+
+<> Welcome to Mozzarella v1.5
+
+fn game {
+	var target => randint(0, 25);
+	var guess;
+	while (guess != target) {
+		guess => nfield("Guess a number 0-25:");
+		println(
+			? guess < target : "Guess higher!"
+			$ guess == target : "You got it!"
+			$ guess > target : "Guess lower!"
+		);
+	}
+}
+
+fn main {
+	while (true) {
+		clear();
+		game();
+		field("Press enter to continue...");	
+	}
+}
+
+main();
+
+
+
+
+
+
+
+
+
+
+

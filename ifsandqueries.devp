@@ -1,0 +1,22 @@
+
+var x => 5;
+
+if (x < 4) {
+	println("x is less than 4!");
+} elif (x == 4) {
+	println("x is 4!");
+} else {
+	println("x is neither less than nor equal to 4!");
+	println("huzzah");
+}
+
+? true : println("what") $ true : println("ok") $_ : println("default");
+
+
+
+
+
+
+
+
+

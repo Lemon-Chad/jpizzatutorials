@@ -1,0 +1,24 @@
+
+<> Welcome to Mozzarella v1.5
+
+recipe Pizza {
+	topping, cheese;
+	ingredients <a, b> {
+		attr topping => a;
+		attr cheese => b;
+	}
+	method details {
+		println("This is a pizza with " + str(this::topping) + 
+			" and " + str(this::cheese) + " cheese.");
+	}
+};
+
+fn main {
+	var x => Pizza("sausage", "swiss");
+	x::details();
+}
+
+main();
+
+
+

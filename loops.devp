@@ -1,0 +1,15 @@
+
+var x => 1;
+println(while (x < 10) => x += 2);
+
+println(for (i -> 1:10000000) => i);
+
+
+
+
+
+
+
+
+
+

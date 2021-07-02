@@ -1,0 +1,14 @@
+
+
+fn fib<x> {
+	if (x <= 2) { return 1; }
+	return fib(x - 2) + fib(x - 1);
+}
+
+println(fib(50));
+
+<<
+this(1, 2); <- runs code
+this(1, 2); <- skips code and returns value from last time
+<<
+

@@ -1,0 +1,27 @@
+
+import utils;
+
+<> Welcome to Mozzarella v1.5
+
+fn main {
+	var map => utils::Map("String", "num");
+	map::add("Hello", 5);
+	map::add("Coolio", 8);
+	map::add("Coolio", "Badoolio");
+	map::add(3, 4);
+}
+
+main();
+
+
+
+
+
+
+
+
+
+
+
+
+
