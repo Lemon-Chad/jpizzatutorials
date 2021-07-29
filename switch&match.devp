@@ -1,0 +1,31 @@
+
+<> Welcome to Mozzarella v1.5
+
+fn main {
+	var x => 4;
+
+	switch (x) {
+		case 4:
+			println("Hello, ");
+		case 2:
+			println("world!");
+			break;
+		case 0:
+			println("No fallthrough!"); break;
+		default:
+			println("Unhandled number!");
+	};
+
+	println(match (x) {
+		case 2 -> 4
+		case 4 -> 8
+		case 8 -> 12
+		default -> 0
+	});
+
+}
+
+main();
+
+
+

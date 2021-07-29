@@ -55,7 +55,7 @@ recipe Board {
 
 fn game {
 	var board => Board();
-	bake playing => ! -> !board::win(1) & !board::win(2) & !board::stalemate();	
+	cal playing  -> !board::win(1) & !board::win(2) & !board::stalemate();	
 
 	fn place<player> {
 		var ind => -1;
@@ -64,10 +64,10 @@ fn game {
 		}
 	}
 
-	while (playing()) {
+	while (playing) {
 		println(board::toString());
 		place(1);
-		if (!playing()) { break; }
+		if (!playing) { break; }
 		println(board::toString());
 		place(2);
 	}

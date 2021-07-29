@@ -57,7 +57,7 @@ recipe _tictactoegame__Board_ {
 
 fn _tictactoegame__game_ {
 	var _tictactoegame__board_ => _tictactoegame__Board_();
-	bake _tictactoegame__playing_ => ! -> !_tictactoegame__board_::win(1) & !_tictactoegame__board_::win(2) & !_tictactoegame__board_::stalemate();	
+	cal playing  -> !_tictactoegame__board_::win(1) & !_tictactoegame__board_::win(2) & !_tictactoegame__board_::stalemate();	
 
 	fn _tictactoegame__place_<player> {
 		var _tictactoegame__ind_ => -1;
@@ -66,10 +66,10 @@ fn _tictactoegame__game_ {
 		}
 	}
 
-	while (_tictactoegame__playing_()) {
+	while (playing) {
 		println(_tictactoegame__board_::toString());
 		_tictactoegame__place_(1);
-		if (!_tictactoegame__playing_()) { break; }
+		if (!playing) { break; }
 		println(_tictactoegame__board_::toString());
 		_tictactoegame__place_(2);
 	}

@@ -1,0 +1,23 @@
+
+<> Welcome to Mozzarella v1.5
+
+enum PizzaToppings {
+	sausage,
+	pepperoni,
+	mushrooms,
+};
+
+fn main {
+	var pt#Enum => PizzaToppings;
+	var favorite#PizzaToppings => pt::sausage;
+	if (favorite == PizzaToppings::pepperoni) {
+		println("I like pepperoni!");
+	} elif (favorite == PizzaToppings::sausage) {
+		println("I like sausage!");
+	} else {
+		println("I enjoy shrooms.");
+	}
+}
+
+main();
+

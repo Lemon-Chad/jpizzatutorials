@@ -1,0 +1,34 @@
+
+<> Welcome to Mozzarella v1.5
+
+recipe CoolObject {
+	Z;
+	ingredients <z> {
+		attr Z => z;
+	}
+	method bin type -> "CoolObject" + (this::Z)
+};
+
+fn main {
+	println("Introduction to Complex Variables");
+	var x#num => -1;
+	cal y -> x ^ 2;
+	x => 4;
+	println(y);
+	x => 8;
+	println(y);
+	var x#any => "string";
+	x => [4, 5];
+	var c#CoolObjectHi => CoolObject("Hi");
+	println(type(c));
+}
+
+main();
+
+
+
+
+
+
+
+
