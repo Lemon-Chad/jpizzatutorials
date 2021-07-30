@@ -1,0 +1,32 @@
+import socks;
+
+<> Welcome to Mozzarella v1.5
+
+fn async handleConn<conn#SocketConnection> {
+	println("New connection!");
+	conn::send("Hello, world!");
+	println("Sent data: \"Hello, world!\"");
+	conn::close();
+}
+
+fn main {
+	bake server => socks::Socket(5000);
+	while (true) {
+		var connection => server::listen();
+		handleConn(connection);
+	}
+}
+
+main();
+
+
+
+
+
+
+
+
+
+
+
+

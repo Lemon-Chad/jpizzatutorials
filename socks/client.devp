@@ -1,0 +1,19 @@
+import socks;
+
+<> Welcome to Mozzarella v1.5
+
+fn main {
+	bake client => socks::SocketClient("localhost", 5000);
+	println("Recieved data: " + client::recv());
+	client::close();
+}
+
+main();
+
+
+
+
+
+
+
+
