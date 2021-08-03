@@ -1,0 +1,41 @@
+
+import socks;
+
+fn async client<conn#SocketConnection> {
+    conn::send("Welcome to the chat!");
+    println("Sent connection message.");
+    var lastMessage => latestMessage;
+
+    while (true) {
+        var response => null;
+
+        if (lastMessage != latestMessage) {
+            lastMessage => latestMessage;
+            response => lastMessage;
+        }
+
+        var action => conn::recv();
+        conn::send(response);
+
+        if (action == null) { continue; }
+
+        println("Received message: " + action);
+        latestMessage => action;
+    }
+
+}
+
+fn run {
+    bake server => socks::Socket(5000);
+    var latestMessage;
+
+    while (true) {
+        println("Waiting for connection...");
+        var connection => server::listen();
+        println("Connection received!");
+        client(connection);
+    }
+
+}
+
+run();

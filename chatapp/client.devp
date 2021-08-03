@@ -1,0 +1,46 @@
+
+import socks;
+
+fn async getInput {
+    while (true) =>
+        input => field("");
+}
+
+<<
+Message object:
+{
+    "username": username,
+    "message": message
+}
+<<
+
+fn run {
+    bake username => field("Enter a username: ");
+    var input;
+    bake client => socks::SocketClient("localhost", 5000);
+
+    println(client::recv());
+
+    getInput();
+    while (true) {
+        if (input != null) {
+            client::send({
+                "username": username,
+                "message": input
+            });
+            input => null;
+        } else { 
+            client::send(null);
+        }
+
+        var response => client::recv();
+        if (response != null & (dict(response)["username"]) != username) {
+            println((response["username"]) + ": " + (response["message"]));
+            <> Bob: Hello!
+        }
+
+    }
+
+}
+
+run();
